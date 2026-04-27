@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/cep/01045010"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "cep": "01045-010",
+      "logradouro": "Praça da República",
+      "bairro": "República",
+      "localidade": "São Paulo",
+      "uf": "SP"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/cep/01310100"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "cep": "01310-100",
+      "logradouro": "Avenida Paulista",
+      "bairro": "Bela Vista",
+      "localidade": "São Paulo",
+      "uf": "SP"
+    }
+  }
+}
