@@ -27,12 +27,15 @@ public class CepServiceImpl implements CepService {
 
     @Override
     public CepResponseDTO buscarCep(String cep){
+        if(cep.isEmpty()){
+            throw new RuntimeException("Vazia");
+        }
         String url = cepApiUrl + "/cep/" + cep;
         CepResponseDTO response = restTemplate.getForObject(url, CepResponseDTO.class);
 
         if (response != null) {
             ConsultaLog log = ConsultaLog.builder()
-                    .cep(response.getCep())
+                    .cep(tratarResponse(response.getCep()))
                     .logradouro(response.getLogradouro())
                     .bairro(response.getBairro())
                     .cidade(response.getCidade())
@@ -43,4 +46,8 @@ public class CepServiceImpl implements CepService {
         }
         return response;
     }
+    private String tratarResponse(String valor) {
+        return valor != null ? valor : "N/A";
+    }
+
 }
